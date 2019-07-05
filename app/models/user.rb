@@ -1,6 +1,6 @@
 class User < ApplicationRecord
   attr_accessor :remember_token
-  before_create :remember
+  # before_create :remember
 
    has_secure_password
 
