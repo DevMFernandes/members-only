@@ -13,7 +13,7 @@ class PostsController < ApplicationController
     if @post.save
       redirect_to posts_path, notice: 'Post was successfully created.'
     else
-      flash.now[:danger] = 'Post not saved.'
+      #flash.now[:danger] = 'Post not saved.'
       render 'new'
     end
   end

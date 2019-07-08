@@ -2,12 +2,15 @@
     <nav>
         <ul>
           <li><%= link_to "Home", root_path %></li>
-          <li><%= link_to "Sign up", signup_path %></li>
+
           <% if logged_in? %>
             <li><%= link_to "Log out", logout_path, method: :delete %></li>
+            <li><%= link_to "New post", new_post_path %></li>
           <% else %>
             <li><%= link_to "Log in", login_path %></li>
+            <li><%= link_to "Sign up", signup_path %></li>
           <% end %>
+          <li><%= link_to "Posts", posts_path %></li>
         </ul>
     </nav>
 </header>
