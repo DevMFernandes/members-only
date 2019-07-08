@@ -16,3 +16,5 @@
   padding:20px;
   @include box_sizing;
 }
+
+.field_with_errors { display: inline; }
