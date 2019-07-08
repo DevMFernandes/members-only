@@ -1,2 +1,10 @@
 <h1>Posts#index</h1>
 <p>Find me in app/views/posts/index.html.erb</p>
+
+<% @posts.each do |post| %>
+  <% if logged_in? %>
+    <p><%= post.user.name %></p>
+  <% end %>
+  <p><%= post.body %></p>
+  <hr>
+<% end %>
