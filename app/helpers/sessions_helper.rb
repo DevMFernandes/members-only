@@ -12,7 +12,6 @@ module SessionsHelper
     cookies.permanent[:remember_token] = user.remember_token
   end
 
-
   # Returns the current logged-in user (if any).
   def current_user
     if (user_id = session[:user_id])
@@ -43,6 +42,14 @@ module SessionsHelper
     forget(current_user)
     session.delete(:user_id)
     @current_user = nil
+  end
+
+  # Confirms a logged-in user.
+  def logged_in_user
+    unless logged_in?
+      flash[:danger] = "Please log in."
+      redirect_to login_url
+    end
   end
 
 end
